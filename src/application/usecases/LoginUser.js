@@ -6,6 +6,10 @@ class LoginUser {
   }
 
   async execute({ email, password }) {
+    
+    if(!email )throw new Error("Email is required")
+    if(!password)throw new Error("Password is required")
+
     const user = await this.userRepository.findByEmail(email)
     if (!user) throw new Error("Invalid credentials")
 

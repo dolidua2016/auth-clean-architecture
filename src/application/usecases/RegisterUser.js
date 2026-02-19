@@ -7,6 +7,7 @@ class RegisterUser {
   }
 
   async execute({ email, password }) {
+    
     if(!email )throw new Error("Email is required")
     if(!password)throw new Error("Password is required")
 
