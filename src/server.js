@@ -17,5 +17,5 @@ app.get("/profile", authMiddleware, (req, res) => {
 
 sequelize.sync().then(() => {
   console.log("Database connected")
-  app.listen(ProcessingInstruction.env.PORT, () => console.log("Server running on port 3000"))
+  app.listen(process.env.PORT, () => console.log("Server running on port 3000"))
 })
